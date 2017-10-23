@@ -30,5 +30,13 @@ RUN apk add --no-cache --virtual .module-deps \
     php -r "copy('http://getcomposer.org/installer', 'composer-setup.php');" && \
     php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
     php -r "unlink('composer-setup.php');"
-
-VOLUME [ "/var/www" ]
+## Superviser
+ENV PYTHON_VERSION=2.7.12-r0
+ENV PY_PIP_VERSION=8.1.2-r0
+ENV SUPERVISOR_VERSION=3.3.1
+RUN apk update && apk add -u python=$PYTHON_VERSION py-pip=$PY_PIP_VERSION && \
+    pip install supervisor==$SUPERVISOR_VERSION && mkdir -p /etc/supervisor && touch /etc/supervisor/default.conf
+COPY supervisord.conf /etc/supervisor/supervisord.conf
+COPY ./run.sh /run.sh
+RUN chmod +x /run.sh
+CMD [ "/run.sh" ]
