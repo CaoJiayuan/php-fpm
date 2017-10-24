@@ -6,7 +6,6 @@ if [ -f "${CRONTAB_FILE}" ]; then
 fi
 
 if [ "${TIMEZONE}" == "" ]; then
-   env TIMEZONE 'Asia/Shanghai'
    TIMEZONE='Asia/Shanghai'
 fi
 
