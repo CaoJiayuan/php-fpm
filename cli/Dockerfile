@@ -6,7 +6,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
 RUN apk add --update --no-cache \
     tzdata icu-libs libpng libjpeg libcurl libintl libxml2 \
-    freetype git ca-certificates > /dev/null
+    freetype ca-certificates > /dev/null
 RUN apk add --no-cache --virtual .module-deps \
     icu-dev freetype-dev libjpeg-turbo-dev libmcrypt-dev libpng-dev \
     $PHPIZE_DEPS \
