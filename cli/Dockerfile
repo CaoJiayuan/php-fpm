@@ -6,13 +6,13 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
 RUN apk add --update --no-cache \
     tzdata icu-libs libpng libjpeg libcurl libintl libxml2 \
-    freetype ca-certificates postgresql-dev
+    freetype ca-certificates
 RUN apk add --no-cache --virtual .module-deps \
     icu-dev freetype-dev libjpeg-turbo-dev libmcrypt-dev libpng-dev \
     $PHPIZE_DEPS \
     zlib-dev curl-dev gettext-dev \
     libxml2-dev libressl-dev  && \
-    docker-php-ext-install pdo_pgsql mbstring gd pdo_mysql curl exif gettext xmlrpc zip bcmath pcntl && \
+    docker-php-ext-install mbstring gd pdo_mysql curl exif gettext xmlrpc bcmath pcntl && \
     apk del .module-deps && \
     rm -fr /tmp/src && \
     rm -fr /var/cache/apk/*
@@ -27,8 +27,6 @@ RUN apk update && apk add -u python=$PYTHON_VERSION py-pip=$PY_PIP_VERSION && \
     rm -fr /var/cache/apk/*
 
 COPY supervisord.conf /etc/supervisor/supervisord.conf
-
-VOLUME /var/app
 
 COPY ./run.sh /run.sh
 RUN chmod +x /run.sh
