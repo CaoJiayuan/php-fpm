@@ -6,7 +6,7 @@ MAINTAINER 'Cao Jiayuan'
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
 RUN apk add --update --no-cache \
-    tzdata icu-libs libpng libjpeg libcurl libintl libxml2 \
+    gettext tzdata icu-libs libpng libjpeg libcurl libintl libxml2 \
     freetype ca-certificates > /dev/null
 RUN apk add --no-cache --virtual .module-deps \
     icu-dev freetype-dev libjpeg-turbo-dev libmcrypt-dev libpng-dev \
@@ -30,6 +30,7 @@ COPY supervisord.conf /etc/supervisor/supervisord.conf
 
 COPY ./opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 COPY ./default.ini /usr/local/etc/php/conf.d/default.ini 
+COPY ./www.conf.template /usr/local/etc/php-fpm.d/www.conf.tempate
 COPY ./run.sh /run.sh
 RUN chmod +x /run.sh
 CMD [ "/run.sh" ]
