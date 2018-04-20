@@ -9,7 +9,7 @@ if [ "${TIMEZONE}" == "" ]; then
    TIMEZONE='Asia/Shanghai'
 fi
 if [ "${PM_MAX_CHILDREN}" == "" ]; then
-   PM_MAX_CHILDREN=5
+   export PM_MAX_CHILDREN=5
 fi
 
 echo "date.timezone=${TIMEZONE}" >> /usr/local/etc/php/conf.d/default.ini && \
