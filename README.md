@@ -1,6 +1,6 @@
 <p align="center">
 <h1>php-fpm image</h1>
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/CaoJiayuan/php-fpm.svg?branch=master" alt="Build Status"></a>
+<a href="https://travis-ci.org/CaoJiayuan/php-fpm"><img src="https://travis-ci.org/CaoJiayuan/php-fpm.svg?branch=master" alt="Build Status"></a>
 </p>
 
 ### environment
