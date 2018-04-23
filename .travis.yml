@@ -7,7 +7,7 @@ before_install:
 
 script:
   - docker build -t $DOCKER_REG/0x01301c74/php-fpm-slim .
-  - docker build -t $DOCKER_REG/0x01301c74/php-cli .
+  - docker build -t $DOCKER_REG/0x01301c74/php-cli ./cli
 
 after_success:
   - docker push $DOCKER_REG/0x01301c74/php-fpm-slim
