@@ -1,4 +1,4 @@
-FROM php:7.2-cli-alpine3.6
+FROM php:7.2.4-fpm-alpine3.6
 
 WORKDIR /var/app
 MAINTAINER 'Cao Jiayuan'
@@ -18,7 +18,7 @@ RUN apk add --no-cache --virtual .module-deps \
     rm -fr /var/cache/apk/*
 
 ## Superviser
-ENV PYTHON_VERSION=2.7.13-r1
+ENV PYTHON_VERSION=2.7.14-r0
 ENV PY_PIP_VERSION=9.0.1-r1
 ENV SUPERVISOR_VERSION=3.3.1
 RUN apk update && apk add -u python=$PYTHON_VERSION py-pip=$PY_PIP_VERSION && \
