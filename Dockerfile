@@ -13,7 +13,7 @@ RUN apk add --no-cache --virtual .module-deps \
     $PHPIZE_DEPS \
     zlib-dev curl-dev gettext-dev \
     libxml2-dev libressl-dev > /dev/null && \
-    docker-php-ext-install gd intl pdo_mysql curl exif gettext xmlrpc bcmath opcache && \
+    docker-php-ext-install gd intl pdo_mysql curl exif gettext xmlrpc bcmath opcache pcntl && \
     apk del .module-deps && \
     rm -fr /tmp/src && \
     rm -fr /var/cache/apk/*
