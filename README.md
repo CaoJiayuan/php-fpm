@@ -4,7 +4,7 @@
 </p>
 
 ### environment
-* ```SUPERVISOR_CONF``` supervisor配置文件
-* ```CRONTAB_FILE``` crontab配置文件
-* ```PM_MAX_CHILDREN``` fpm 最大子进程数
-* ```TIMEZONE``` 时区
+* ```SUPERVISOR_CONF``` supervisor config file
+* ```CRONTAB_FILE``` crontab config file
+* ```PM_MAX_CHILDREN``` fpm max children thread
+* ```TIMEZONE``` timezone
