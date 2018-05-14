@@ -6,14 +6,14 @@ MAINTAINER 'Cao Jiayuan'
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
 RUN apk add --update --no-cache \
-    gettext tzdata icu-libs libpng libjpeg libcurl libintl libxml2 \
+    gettext tzdata icu-libs libzip libpng libjpeg libcurl libintl libxml2 \
     freetype ca-certificates > /dev/null
 RUN apk add --no-cache --virtual .module-deps \
-    icu-dev freetype-dev libjpeg-turbo-dev libmcrypt-dev libpng-dev \
+    icu-dev libzip-dev freetype-dev libjpeg-turbo-dev libmcrypt-dev libpng-dev \
     $PHPIZE_DEPS \
     zlib-dev curl-dev gettext-dev \
     libxml2-dev libressl-dev > /dev/null && \
-    docker-php-ext-install gd intl pdo_mysql curl exif gettext xmlrpc bcmath opcache pcntl && \
+    docker-php-ext-install zip gd intl pdo_mysql curl exif gettext xmlrpc bcmath opcache pcntl && \
     apk del .module-deps && \
     rm -fr /tmp/src && \
     rm -fr /var/cache/apk/*
