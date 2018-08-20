@@ -1,4 +1,4 @@
-FROM php:7.2.5-cli-alpine3.6
+FROM php:7.2.8-cli-alpine3.6
 
 WORKDIR /var/app
 MAINTAINER 'Cao Jiayuan'
