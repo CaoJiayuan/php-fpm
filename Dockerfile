@@ -3,7 +3,6 @@ FROM php:7.2.8-fpm-alpine3.6
 WORKDIR /var/www
 
 MAINTAINER 'Cao Jiayuan'
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
 RUN apk add --update --no-cache \
     gettext tzdata icu-libs libzip libpng libjpeg libjpeg-turbo-dev libpng-dev libcurl libintl libxml2 \
