@@ -1,6 +1,4 @@
-if [ -f "${SUPERVISOR_CONF}" ]; then
-    cp ${SUPERVISOR_CONF} /etc/supervisor/default.conf
-fi
+#!/bin/sh
 if [ -f "${CRONTAB_FILE}" ]; then
     cp ${CRONTAB_FILE} /etc/crontabs/root
 fi
@@ -17,6 +15,5 @@ echo ${TIMEZONE} > /etc/timezone && \
 ln -sf /usr/share/zoneinfo/${TIMEZONE} /etc/localtime && \
 envsubst '$PM_MAX_CHILDREN' < /usr/local/etc/php-fpm.d/www.conf.tempate > /usr/local/etc/php-fpm.d/www.conf
 
-supervisord --configuration /etc/supervisor/supervisord.conf
 /usr/sbin/crond
-php-fpm
+/supervisor-run.sh

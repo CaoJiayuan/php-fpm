@@ -1,4 +1,4 @@
-FROM php:7.2.8-fpm-alpine3.6
+FROM cjy632258/php-fpm-slim:supervisor
 
 WORKDIR /var/www
 
@@ -18,16 +18,6 @@ RUN apk add --no-cache --virtual .module-deps \
     apk del .module-deps && \
     rm -fr /tmp/src && \
     rm -fr /var/cache/apk/*
-## Superviser
-ENV PYTHON_VERSION=2.7.14-r0
-ENV PY_PIP_VERSION=9.0.1-r1
-ENV SUPERVISOR_VERSION=3.3.1
-RUN apk update && apk add -u python=$PYTHON_VERSION py-pip=$PY_PIP_VERSION && \
-    pip install supervisor==$SUPERVISOR_VERSION && mkdir -p /etc/supervisor && touch /etc/supervisor/default.conf && \
-    rm -fr /tmp/src && \
-    rm -fr /var/cache/apk/*
-
-COPY supervisord.conf /etc/supervisor/supervisord.conf
 
 COPY ./opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 COPY ./default.ini /usr/local/etc/php/conf.d/default.ini 

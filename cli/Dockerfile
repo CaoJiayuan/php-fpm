@@ -3,6 +3,10 @@ FROM php:7.2.8-cli-alpine3.6
 WORKDIR /var/app
 MAINTAINER 'Cao Jiayuan'
 
+ENV PYTHON_VERSION=2.7.15-r0
+ENV PY_PIP_VERSION=9.0.1-r1
+ENV SUPERVISOR_VERSION=3.3.4
+
 RUN apk add --update --no-cache \
     tzdata icu-libs libpng libjpeg libcurl libintl libxml2 \
     freetype ca-certificates
@@ -17,9 +21,6 @@ RUN apk add --no-cache --virtual .module-deps \
     rm -fr /var/cache/apk/*
 
 ## Superviser
-ENV PYTHON_VERSION=2.7.14-r0
-ENV PY_PIP_VERSION=9.0.1-r1
-ENV SUPERVISOR_VERSION=3.3.1
 RUN apk update && apk add -u python=$PYTHON_VERSION py-pip=$PY_PIP_VERSION && \
     pip install supervisor==$SUPERVISOR_VERSION && mkdir -p /etc/supervisor && touch /etc/supervisor/default.conf && \
     rm -fr /tmp/src && \
