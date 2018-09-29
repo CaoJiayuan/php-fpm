@@ -7,6 +7,10 @@ before_install:
 
 script:
   - docker build -t cjy632258/php-fpm-slim .
+  - docker build -t cjy632258/php-cli -f cli/Dockerfile .
+  - docker build -t cjy632258/php-fpm-slim:nginx -f nginx/Dockerfile .
 
 after_success:
   - docker push cjy632258/php-fpm-slim
+  - docker push cjy632258/php-fpm-slim:nginx
+  - docker push cjy632258/php-cli
