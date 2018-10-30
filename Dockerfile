@@ -26,7 +26,7 @@ RUN apk add --no-cache --virtual .module-deps \
 
 COPY ./opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 COPY ./default.ini /usr/local/etc/php/conf.d/default.ini 
-COPY ./www.conf.template /usr/local/etc/php-fpm.d/www.conf.tempate
+COPY ./www.conf.template /usr/local/etc/www.conf.tempate
 COPY ./run.sh /run.sh
 RUN chmod +x /run.sh
 CMD [ "/run.sh" ]
