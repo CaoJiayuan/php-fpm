@@ -21,7 +21,8 @@ RUN apk add --no-cache --virtual .module-deps \
     docker-php-ext-install -j${NUMPROC} gd zip intl pdo_mysql curl exif gettext xmlrpc bcmath opcache pcntl && \
     apk del .module-deps && \
     rm -fr /tmp/src && \
-    rm -fr /var/cache/apk/*
+    rm -fr /var/cache/apk/* && \
+    rm -fr /usr/local/etc/php-fpm.d/*
 
 COPY ./opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 COPY ./default.ini /usr/local/etc/php/conf.d/default.ini 
