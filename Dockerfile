@@ -29,4 +29,4 @@ COPY ./default.ini /usr/local/etc/php/conf.d/default.ini
 COPY ./www.conf.template /usr/local/etc/www.conf.tempate
 COPY ./run.sh /run.sh
 RUN chmod +x /run.sh
-CMD [ "/run.sh" ]
+ENTRYPOINT /run.sh
