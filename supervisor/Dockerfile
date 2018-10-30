@@ -1,6 +1,6 @@
 FROM php:7.2.8-fpm-alpine3.6
 
-MAINTAINER 'Cao Jiayuan'
+LABEL maintainer 'Cao Jiayuan'
 
 ## Superviser
 ENV PYTHON_VERSION=2.7.15-r0

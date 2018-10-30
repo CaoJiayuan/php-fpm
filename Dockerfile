@@ -2,7 +2,11 @@ FROM cjy632258/php-fpm-slim:supervisor
 
 WORKDIR /var/www
 
-MAINTAINER 'Cao Jiayuan'
+LABEL maintainer 'Cao Jiayuan'
+
+ENV TIMEZONE=Asia/Shanghai \
+    PM_MAX_CHILDREN=5 \
+    FPM_LISTEN=127.0.0.1:9000
 
 RUN apk add --update --no-cache \
     gettext tzdata icu-libs libzip libpng libjpeg libjpeg-turbo-dev libpng-dev libcurl libintl libxml2 \

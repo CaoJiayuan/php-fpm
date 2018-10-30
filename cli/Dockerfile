@@ -1,7 +1,7 @@
 FROM php:7.2.8-cli-alpine3.6
 
 WORKDIR /var/app
-MAINTAINER 'Cao Jiayuan'
+LABEL maintainer 'Cao Jiayuan'
 
 ENV PYTHON_VERSION=2.7.15-r0
 ENV PY_PIP_VERSION=9.0.1-r1
