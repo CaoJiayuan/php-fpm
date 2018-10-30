@@ -5,4 +5,5 @@ RUN apk add --update --no-cache nginx gettext
 COPY nginx-run.sh /nginx-run.sh
 RUN chmod +x /nginx-run.sh
 
+EXPOSE 9000 80 443
 ENTRYPOINT /nginx-run.sh
