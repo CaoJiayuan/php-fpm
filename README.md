@@ -1,7 +1,5 @@
-<p align="center">
-<h1>php-fpm image</h1>
-<a href="https://travis-ci.org/CaoJiayuan/php-fpm"><img src="https://travis-ci.org/CaoJiayuan/php-fpm.svg?branch=master" alt="Build Status"></a>
-</p>
+# php-fpm docker image
+[![Build Status](https://travis-ci.org/CaoJiayuan/php-fpm.svg?branch=master)](https://travis-ci.org/CaoJiayuan/php-fpm)
 
 ### environment
 * ```SUPERVISOR_CONF``` supervisor config file
