@@ -1,4 +1,4 @@
-FROM php:7.2.8-cli-alpine3.6
+FROM php:7.8-cli-alpine3.8
 
 WORKDIR /var/app
 LABEL maintainer 'Cao Jiayuan'
