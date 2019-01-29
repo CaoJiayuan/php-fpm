@@ -3,9 +3,9 @@ FROM php:7.3-cli-alpine3.8
 WORKDIR /var/app
 LABEL maintainer 'Cao Jiayuan'
 
-ENV PYTHON_VERSION=2.7.15-r0
-ENV PY_PIP_VERSION=9.0.1-r1
-ENV SUPERVISOR_VERSION=3.3.4
+ENV PYTHON_VERSION=2.7.15-r1
+ENV PY_PIP_VERSION=10.0.1-r0
+ENV SUPERVISOR_VERSION=3.3.5
 
 RUN apk add --update --no-cache \
     tzdata icu-libs libpng libjpeg libcurl libintl libxml2 \
