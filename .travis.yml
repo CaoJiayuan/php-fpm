@@ -11,9 +11,11 @@ script:
   - docker build -t cjy632258/php-fpm-slim .
   - docker build -t cjy632258/php-cli -f cli/Dockerfile cli
   - docker build -t cjy632258/php-fpm-slim:nginx -f nginx/Dockerfile nginx
+  - docker build -t cjy632258/php-fpm-slim:grpc -f grpc/Dockerfile grpc
 
 after_success:
   - docker push cjy632258/php-fpm-slim:supervisor
   - docker push cjy632258/php-fpm-slim
   - docker push cjy632258/php-fpm-slim:nginx
+  - docker push cjy632258/php-fpm-slim:grpc
   - docker push cjy632258/php-cli
