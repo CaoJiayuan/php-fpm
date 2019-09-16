@@ -2,8 +2,6 @@ sudo: required
 services:
   - docker
 before_install:
-  - docker pull php:7.3-fpm-alpine3.8
-  - docker pull php:7.3-cli-alpine3.8
   - echo $DOCKER_PWD | docker login -u $DOCKER_USER --password-stdin
 
 script:
@@ -11,11 +9,9 @@ script:
   - docker build -t cjy632258/php-fpm-slim .
   - docker build -t cjy632258/php-cli -f cli/Dockerfile cli
   - docker build -t cjy632258/php-fpm-slim:nginx -f nginx/Dockerfile nginx
-  - docker build -t cjy632258/php-fpm-slim:grpc -f grpc/Dockerfile grpc
 
 after_success:
   - docker push cjy632258/php-fpm-slim:supervisor
   - docker push cjy632258/php-fpm-slim
   - docker push cjy632258/php-fpm-slim:nginx
-  - docker push cjy632258/php-fpm-slim:grpc
   - docker push cjy632258/php-cli
