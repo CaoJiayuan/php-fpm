@@ -3,7 +3,7 @@ FROM php:7.3-fpm-alpine3.10
 LABEL maintainer 'Cao Jiayuan'
 
 ## Superviser
-ENV PYTHON_VERSION=2.7.16-r1
+ENV PYTHON_VERSION=2.7.18-r0
 ENV PY_PIP_VERSION=18.1-r0
 ENV SUPERVISOR_VERSION=3.3.5
 RUN apk update && apk add -u python=$PYTHON_VERSION py-pip=$PY_PIP_VERSION gettext && \
