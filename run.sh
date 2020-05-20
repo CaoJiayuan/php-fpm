@@ -8,5 +8,5 @@ echo ${TIMEZONE} > /etc/timezone && \
 ln -sf /usr/share/zoneinfo/${TIMEZONE} /etc/localtime && \
 envsubst '$PM_MAX_CHILDREN,$FPM_LISTEN' < /usr/local/etc/www.conf.tempate > /usr/local/etc/php-fpm.d/www.conf
 
-/usr/sbin/crond
+#/usr/sbin/crond
 /supervisor-run.sh
