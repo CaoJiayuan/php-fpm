@@ -18,7 +18,7 @@ RUN apk add --no-cache --virtual .module-deps \
     libxml2-dev libressl-dev > /dev/null && \
     docker-php-ext-configure gd --with-jpeg-dir=/usr/lib/ --with-freetype-dir=/usr/lib/ --with-png-dir=/usr/lib/ --with-gd && \
     NUMPROC=$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) && \
-    docker-php-ext-install -j${NUMPROC} gd zip intl pdo_mysql curl exif gettext xmlrpc bcmath opcache pcntl && \
+    docker-php-ext-install -j${NUMPROC} pdo_pgsql gd zip intl pdo_mysql curl exif gettext xmlrpc bcmath opcache pcntl && \
     apk del .module-deps && \
     rm -fr /tmp/src && \
     rm -fr /var/cache/apk/*
