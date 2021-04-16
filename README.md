@@ -6,3 +6,6 @@
 * ```CRONTAB_FILE``` crontab config file
 * ```PM_MAX_CHILDREN``` fpm max children thread
 * ```TIMEZONE``` timezone
+
+### usage
+* ```docker pull cjy632258/php-fpm-slim:nginx```
