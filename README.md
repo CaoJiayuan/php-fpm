@@ -8,4 +8,4 @@
 * ```TIMEZONE``` timezone
 
 ### usage
-* ```docker pull cjy632258/php-fpm-slim:nginx```
+* Nginx version ```docker pull cjy632258/php-fpm-slim:nginx```

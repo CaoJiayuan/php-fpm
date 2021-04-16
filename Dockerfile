@@ -5,7 +5,7 @@ WORKDIR /var/www
 LABEL maintainer 'Cao Jiayuan'
 
 ENV TIMEZONE=Asia/Shanghai \
-    PM_MAX_CHILDREN=5 \
+    PM_MAX_CHILDREN=32 \
     FPM_LISTEN=127.0.0.1:9000
 
 RUN apk add --update --no-cache \
