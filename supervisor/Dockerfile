@@ -1,4 +1,4 @@
-FROM php:7-fpm
+FROM php:7-fpm-alpine
 
 LABEL maintainer 'Cao Jiayuan'
 
