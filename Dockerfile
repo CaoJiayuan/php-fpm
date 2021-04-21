@@ -9,10 +9,10 @@ ENV TIMEZONE=Asia/Shanghai \
     FPM_LISTEN=127.0.0.1:9000
 
 RUN apk add --update --no-cache \
-    gettext tzdata icu-libs libzip libpng libjpeg libjpeg-turbo-dev libpng-dev libcurl libintl libxml2 \
+    gettext tzdata icu-libs libzip libpng libjpeg libjpeg-turbo-dev libpng-dev libcurl libintl libxml2 postgresql-dev \
     freetype ca-certificates > /dev/null
 RUN apk add --no-cache --virtual .module-deps \
-    icu-dev libzip-dev freetype-dev libmcrypt-dev postgresql-dev \
+    icu-dev libzip-dev freetype-dev libmcrypt-dev \
     $PHPIZE_DEPS \
     zlib-dev curl-dev gettext-dev \
     libxml2-dev libressl-dev > /dev/null && \
