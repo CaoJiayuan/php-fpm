@@ -19,6 +19,7 @@ RUN apk add --no-cache --virtual .module-deps \
     docker-php-ext-configure gd --with-jpeg --with-freetype && \
     NUMPROC=$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) && \
     docker-php-ext-install -j${NUMPROC} pdo_pgsql gd zip intl pdo_mysql curl exif gettext xmlrpc bcmath opcache pcntl && \
+    pecl channel-update pecl.php.net && pecl install mcrypt && docker-php-ext-enable mcrypt && \
     apk del .module-deps && \
     rm -fr /tmp/src && \
     rm -fr /var/cache/apk/*
