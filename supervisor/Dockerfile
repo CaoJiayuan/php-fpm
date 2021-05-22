@@ -12,4 +12,5 @@ COPY supervisor-run.sh /supervisor-run.sh
 RUN chmod +x /supervisor-run.sh
 COPY ./supervisord.conf.template /etc/supervisor/supervisord.conf.template
 
+
 ENTRYPOINT /supervisor-run.sh
