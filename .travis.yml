@@ -11,10 +11,10 @@ script:
   - docker build -t cjy632258/php-fpm-slim:supervisor -f supervisor/Dockerfile supervisor
   - docker build -t cjy632258/php-fpm-slim .
   - docker build -t cjy632258/php-fpm-slim:nginx -f nginx/Dockerfile nginx
-  #- docker build -t cjy632258/php-fpm-slim:oci -f oci/Dockerfile oci
+  - docker build -t cjy632258/php-fpm-slim:oci -f oci/Dockerfile oci
 
 after_success:
   - docker push cjy632258/php-fpm-slim:supervisor
   - docker push cjy632258/php-fpm-slim
   - docker push cjy632258/php-fpm-slim:nginx
-  #- docker push cjy632258/php-fpm-slim:oci
+  - docker push cjy632258/php-fpm-slim:oci
