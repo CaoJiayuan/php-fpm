@@ -1,5 +1,5 @@
 # php-fpm docker image
-[![Build Status](https://travis-ci.org/CaoJiayuan/php-fpm.svg?branch=master)](https://travis-ci.org/CaoJiayuan/php-fpm)
+[![Build Status](https://travis-ci.com/CaoJiayuan/php-fpm.svg?branch=master)](https://travis-ci.com/CaoJiayuan/php-fpm)
 
 ### environment
 * ```SUPERVISOR_CONF``` supervisor config file
